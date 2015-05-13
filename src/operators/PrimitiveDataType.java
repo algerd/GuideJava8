@@ -14,7 +14,7 @@ public class PrimitiveDataType {
         byte  8b    -128 to 127(-2E7 to 2E7 - 1)
         short 16b   -32768 to 32767 (or -2E15 to 2E15 - 1)
         int   32b   -2,147,483,648 to 2,147,483,647 (-2E31 to 2E31 - 1)
-        long  64b   -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807(-2E63 to 2E63 - 1)
+        long  64b   -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807(-2E63 to 2E63 - 1).
         
         Integer(byte, short, int, long) literals can also be expressed in
             • Decimal number format (10)        5
