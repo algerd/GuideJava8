@@ -1,5 +1,5 @@
 
-package statement;
+package statements;
 
 /**
  * A block statement is a sequence of zero or more statements enclosed in braces.
