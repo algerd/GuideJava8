@@ -21,9 +21,8 @@ public class Main {
     public void Main() { }
     
     /*
-        The rules for overloaded constructors are the same as for overloaded
-        methods. If a class has multiple constructors, all of them must differ from the others in the number, order, or type of
-        parameters.
+        The rules for overloaded constructors are the same as for overloaded methods. 
+        If a class has multiple constructors, all of them must differ from the others in the number, order, or type of parameters.
     */
     private Main(int n) {
         
