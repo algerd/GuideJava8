@@ -9,6 +9,26 @@ public class Main {
     
     int num;
     
+     /*
+        Constructor initializes the object.
+        The name of a constructor must match the simple name, not the fully qualified name, of the class.
+        Unlike a method, a constructor does not have a return type. If it specifies a return type, it is a method. If it does not specify a return type, it is a constructor.
+    */
+    public Main() {
+        
+    }
+    // Below is a method, not a constructor (return void). 
+    public void Main() { }
+    
+    /*
+        The rules for overloaded constructors are the same as for overloaded
+        methods. If a class has multiple constructors, all of them must differ from the others in the number, order, or type of
+        parameters.
+    */
+    private Main(int n) {
+        
+    }
+    
     public static void main ( String[] args ) {
         /*
         Create object, read and change fields 
