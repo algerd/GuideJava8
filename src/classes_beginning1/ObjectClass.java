@@ -40,8 +40,7 @@ public class ObjectClass {
             2. Methods in the second category have a default implementation in the Object class. You can customize their implementations by reimplementing them in your classes:
                 toString(), equals(), hashCode(), clone(), finalize().
         */
-        obj1.toString();
-        
+         
         /*
             The getClass() method of the Object class returns the reference of the Class object.
         */
@@ -79,6 +78,22 @@ public class ObjectClass {
         car1.equals(car2); // false (car1 == car2)
         car1.equals(car3); // true (car1 == car3)
        
+        /*
+        toString(): default implementation of the toString() method
+            <<fully qualified class name>>@<<hash code of object in hexadecimal>>
+        You need to make sure it is declared public, its return type is String, and it does not take any parameters. 
+        The returned string should be human readable text to give an idea about the state of the object at the time the method is called. 
+        It is recommended to reimplement the toString() method of the Object class in every class you create.
+            public String toString() {
+                String str = "(" + this.x + ", " + this.y + ")";
+                return str;
+            }
+        */
+        System.out.println(car1.toString());
+        System.out.println(car1);
+        String str = "Object" + car1;
+        
+        
     }
     
     public void m1(Object obj) { }
