@@ -9,28 +9,9 @@ public class Main {
     
     int num;
     
-     /*
-        Constructor initializes the object.
-        The name of a constructor must match the simple name, not the fully qualified name, of the class.
-        Unlike a method, a constructor does not have a return type. If it specifies a return type, it is a method. If it does not specify a return type, it is a constructor.
-    */
-    public Main() {
-        
-    }
-    // Below is a method, not a constructor (return void). 
-    public void Main() { }
-    
-    /*
-        The rules for overloaded constructors are the same as for overloaded methods. 
-        If a class has multiple constructors, all of them must differ from the others in the number, order, or type of parameters.
-    */
-    private Main(int n) {
-        
-    }
-    
     public static void main ( String[] args ) {
         /*
-        Create object, read and change fields 
+            Create object, read and change fields 
         */
         Human jack = new Human();
         Human.count++;
@@ -40,8 +21,8 @@ public class Main {
         long population = Human.count;
         
         /*
-        Java has a special reference type called null type.
-        The null reference type is assignment compatible with any other reference type.
+            Java has a special reference type called null type.
+            The null reference type is assignment compatible with any other reference type.
         */
         Human john = null;  // john is not referring to any object
         if (john == null) {
@@ -60,13 +41,13 @@ public class Main {
         //classes_beginning2.ClassAccessTestDefault testDefault; // Error. default(package) class
         
         /*
-        Local Variables
+            Local Variables
         */
-        Main main = new Main();
+        Main main = new Main(5);
         main.localVar();
         
         /*
-        Invokation of main-method another class
+            Invokation of main-method another class
         */
         classes_beginning2.Main.main(args);
    
@@ -108,7 +89,17 @@ public class Main {
         System.out.println("#4: s1 = " + s1);
         
     }
-   
+    
+    /*
+        Default Constructor:
+            The Java compiler adds(if don't exist yet) a default constructor for a top-level class as well as for a nested class.
+            public Main() {}
+            If construct exist with or without args so default construct is not created.
+            Access level of default construct match access level of class.
+            !!! It is good programming practice to add a constructor explicitly to all your classes rather than letting the compiler add a default constructor for your classes.
+    */
+    public Main(int n) {} // default construct is not created
+     
     /*
         The signature of a method is the combination of its name and its parameter’s number, types, and order. 
         Modifiers, return types, and parameter name not part of the signature. Table 6-1 lists some examples of method declarations and their signatures.
@@ -132,14 +123,14 @@ public class Main {
     public void localVar() {
         /*
         Rule1: 
-        Local variables are not initialized by default. Note that this rule is the opposite of the rule for instance/class
-        variable’s initialization. When an instance/class variable is declared, it is initialized with a default value.
+            Local variables are not initialized by default. Note that this rule is the opposite of the rule for instance/class
+            variable’s initialization. When an instance/class variable is declared, it is initialized with a default value.
         */
         int sum; // sum is empty (no 0)
         
         /*
         Rule2:
-        A local variable cannot be accessed in the program until it is assigned a value.
+            A local variable cannot be accessed in the program until it is assigned a value.
         */      
         //System.out.println(sum);// A compile-time error. Cannot read sum because it is not assigned a value yet.
         sum = 10;
@@ -147,13 +138,13 @@ public class Main {
         
         /*
         Rule3:
-        A local variable can be declared anywhere in the body of a method. However, it must be declared before it is used.
+            A local variable can be declared anywhere in the body of a method. However, it must be declared before it is used.
         */
         int k; // OK
         
         /*
         Rule4:
-        A local variable hides the name of an instance variable and a class variable with the same name.
+            A local variable hides the name of an instance variable and a class variable with the same name.
         */
         num = 10; // object var
         int num = 666; // local var
