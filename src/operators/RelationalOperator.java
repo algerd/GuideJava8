@@ -9,8 +9,9 @@ public class RelationalOperator {
     public static void main ( String[] args ) {
         /*
         The equality operator(==) is used to test two operands for equality. It uses the following rules:
-            - Both operands must be either primitive type or reference type. Mixed operands types are not
-                allowed. Mixing the operands types results in a compile-time error.
+            - Both operands must be either primitive type or reference type. 
+                When one operand is a reference type numeric wrapper(for ex. Integer) and another is a primitive type, 
+                the reference type is unboxed to a primitive type and a value comparison takes place.  
             - For primitive operands, it returns true if the both operands represent the same value;
                 otherwise, it returns false. If both operands must be either numeric or boolean. A mix of
                 numeric and boolean types is not allowed.
@@ -20,13 +21,16 @@ public class RelationalOperator {
         int i;
         int j;
         int k;
+        Integer refi = 15;
         boolean b;
         i = j = k = 15; // Assign 15 to i, j, and k
         // A compile-time error
         //b = (i == j == k); // 1)i==j=true 2)true==k - error(boolean == int)
-        
+           
         short sh = 15;
         b = (i == sh); // true
+        
+        b = (i == refi); // true: Integer refi unbox to int refi = 15
         
         /* The following rules apply when the operands of the equality operator are floating-point types.*/
         /* Rule #1
@@ -92,7 +96,10 @@ public class RelationalOperator {
         
         /* Operators >, <, >=, <=
             The operators can be used only with primitive numeric data types. 
-            If either of the operand is NaN (float or double), it returns false.     
+            If either of the operand is NaN (float or double), it returns false. 
+            If a numeric wrapper object is used with >, >=, <, <= operators, it is unboxed and the corresponding primitive type used in the comparison.
+            If you mix the two types, reference and primitive, with these comparison operators, you still get the same results. 
+            First, the reference type is unboxed and a comparison with the two primitive types takes place.
         */
         i = 10;
         j = 15;
