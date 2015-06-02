@@ -52,7 +52,36 @@ public class Main {
         */
         int dif = "apple".compareTo("Orange");
         
+        /*
+            All string literals("Hello") and string literals resulting from compile-time constant expressions are added to the string pool automatically.
+            You can add a String object to the string pool using its intern() method. The intern( ) method returns the
+            reference of the object from string pool if it finds a match. Otherwise, it adds a new String object to the string pool
+            and returns the reference of the new object.
+            You cannot access the pool directly. 
+            There is no way to remove string objects from the pool, except exiting and restarting the app.
+        */
+        boolean bool;
         
+        String h1 = "Hello"; // object "Hello" is added to the string pool, h1 is object reference in the string pool
+        String h2 = new String("Hello"); // object "Hello" are invoked from the string pool, h2 is reference on new object, which isn't added to the string pool
+       
+        bool = h1 == h2; // false
+        bool = h1 == "Hello"; // true
+        bool = h2 == "Hello"; // false
+        h2 = h2.intern(); // object is added to the string pool and return the reference of the string object from the pool
+        bool = h2 == "Hello"; // true 
+        
+        final String constStr = "Constant"; // constStr is a constant
+        String varStr = "Variable";         // varStr is not a constant
+        
+        String s1 = constStr + " is pooled";    // "Constant is pooled" will be added to the string pool
+        String s2 = varStr + " is not pooled";  // Concatenated string will not be added to the string pool
+        
+        bool = ("Constant is pooled" == s1); // true
+        bool = ("Variable is pooled" == s2); // false
+            
+        s2 = s2.intern(); // Will add the content of s2 to the string pool and return the reference of the string object from the pool
+        bool = ("Variable is pooled" == s2); // true
         
     }
     

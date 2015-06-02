@@ -95,6 +95,62 @@ public class SwitchStatement {
             //case num2: // A Compile-time error. num2 is a variable and cannot be used as a label
                 System.out.println("num1 is 10");
         }
-          
+        
+        /*
+        The switch-expression uses a String type. If the switch-expression is null, a NullPointerException is thrown. The case
+        labels must be String literals. You cannot use String variables in the case labels.
+        The switch statement for strings compares the switch-expression with case labels as if the equals() method
+        of the String class has been invoked.
+        */
+        String status = "on";
+        switch(status) {
+            case "on":
+                System.out.println("Turn on"); // Will execute this
+                break;
+            case "off":
+                System.out.println("Turn off");
+                break;
+            default:
+                System.out.println("Unknown command");
+                break;
+        }
+        /*
+        As good programming practice, you need to do the following two things before executing a switch statement
+        with strings:
+            • Check if the switch-expression for the switch statement is null. If it is null, do not execute
+            the switch statement.
+            • If you want to perform a case-insensitive comparison in a switch statement, you need to
+            convert the switch-expression to lowercase or uppercase and use lowercase or uppercase in
+            the case labels accordingly.
+        */
+        operate("on");
+        operate("off");
+        operate("ON");
+        operate("Nothing");
+        operate("OFF");
+        operate(null);              
     }
+    
+    public static void operate(String status) {
+        // Check for null
+        if (status == null) {
+            System.out.println("status cannot be null.");
+            return;
+        }
+        // Convert to lowercase
+        status = status.toLowerCase();
+        switch (status) {
+            case "on":
+                System.out.println("Turn on");
+                break;
+            case "off":
+                System.out.println("Turn off");
+                break;
+            default:
+                System.out.println("Unknown command");
+                break;
+        }
+    }
+    
+    
 }
