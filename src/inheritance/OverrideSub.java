@@ -5,7 +5,7 @@ package inheritance;
  *
  * @author Alex
  */
-public class Override extends OverrideSuper {
+public class OverrideSub extends OverrideSuper {
     public static void main(String[] args) {
         /*
         To summarize the rules of overriding:
@@ -39,9 +39,17 @@ public class Override extends OverrideSuper {
             - method call with a super qualifier calls the overridden method in the superclass.
         */
         super.getEmp();
-        
-        return new Manager();
-        
+       
+        return new Manager();     
+    }
+    
+    /*
+    Using the @Override annotation with a method that is supposed to override a superclass method saves you a lot of debugging time. 
+    Note that the @Override annotation does not change the way method overriding works. 
+    It is used as an indicator to the compiler that it needs to make sure the method really overrides the method of its superclass.
+    */
+    @Override
+    public void getInt( float f, String str) {
         
     }
     
