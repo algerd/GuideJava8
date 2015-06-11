@@ -16,4 +16,5 @@ public enum Enumerate {
     public void get() {
         
     }
+    
 }

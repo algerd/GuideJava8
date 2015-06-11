@@ -15,10 +15,18 @@ public class Arrays {
     private int[] magicNumbers = {5, 11, 21, 51, 101};
     
     public static void main(String[] args) {
-        // examples of array declarations:
+        // array declarations:
         float[] salary;
-        String[] name;
+        int[] counter;
+        String[] name;     
         //Employee[] emp; // emp can hold multiple references to Employee objects
+        
+        // array initialization
+        salary = new float[]{4.4f, 3.6f};
+        counter = new int[2];
+        counter[0] = 5;
+        counter[1] = 7;
+        name = new String[]{"John", "Kate"};
         
         /*
         Creates an array object of type ArrayDataType of ArrayLength length
