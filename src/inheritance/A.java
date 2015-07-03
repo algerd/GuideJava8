@@ -8,4 +8,8 @@ package inheritance;
 public class A { 
     
     void getA(){};
+    
+    void print() {
+        System.out.println(this.getClass());
+    }
 }
