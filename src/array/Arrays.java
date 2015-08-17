@@ -10,7 +10,7 @@ package array;
  * @author Alex
  */
 public class Arrays {
-    
+    //
     // Magic numbers are not supposed to be changed It can be look up though
     private int[] magicNumbers = {5, 11, 21, 51, 101};
     
